@@ -1,15 +1,25 @@
+@keyframes slowGifAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 200%; }
+  /* 75% { background-position: 100% 0%; } */
+  /* 100% { background-position: 0% 0%; } */
+}
+
 #titlePage {
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("assets/ezgif.com-gif-maker.gif");
+  animation: slowGifAnimation 6s infinite ease-in-out;
   width: 100%;
   height: 100vh;
   margin: 0 0;
+  
 }
 
 .titleContainer {
-  background-color: white;
+  background-color: #fff;
   text-align: center;
   width: 100%;
   padding: 20px;
@@ -23,34 +33,190 @@
   font-size: 30px;
 }
 
+/* --------------------- */
+
+body {
+  /* font-family: 'Arial', sans-serif; */
+  font-family: "Courier New", Courier, monospace;
+  /* background-color: #f0f0f0; */
+  background-image: url("https://www.swiss-miss.com/wp-content/uploads/2018/02/46.gif");
+  background-size: 25% 25%; 
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slidePage {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-height: 85%;
+  margin: 25px;
+  overflow: auto;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #0078d4;
+  text-align: center;
+}
+
+h2 {
+  padding-left: 8px;
+  padding-right: 10px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.blurb {
+  color: #000000; 
+  padding: 15px; 
+  margin: 10px;
+  border-radius: 10px;
+  border-radius: 10px; 
+  border: 1px solid #000; 
+  text-align: center;
+  font-weight: 900;
+  display: inline-block;
+}
+
+.ada-button {
+  text-decoration: none;
+  font-weight: 800;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  margin: 10px;
+  border-radius: 30px;
+  padding: 15px 25px;
+  display: inline-block;
+}
+
+.final-slide-text {
+  text-align: center;
+}
+
+.button-container {
+  display: inline-block;
+
+  max-width: 500px; 
+  max-height: 875px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-self: center;
+  margin: 50px;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.to-slides {
+  text-decoration: none;
+  color: black;
+  margin: 20px;
+}
+
+.img-row-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  max-height: 400px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.img-row-item {
+  max-width: 500px;
+  max-height: 500px;
+  display: block;
+  margin: 20px;
+}
+
+
+/* -------------------------------------- */
+
+@keyframes changeBackgroundColor1 {
+  0% {
+    background-color: transparent;
+  }
+  85% {
+    background-color: transparent;
+  }
+  93% {
+    background-color: #ca1414;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes changeBackgroundColor2 {
+  0% {
+    background-color: transparent;
+  }
+  85% {
+    background-color: transparent;
+  }
+  93% {
+    background-color: rgb(21, 214, 54);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.nextButton, .prevButton {
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #ffffff;
+  margin: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.prevButton:hover {
+  background-color: #ca1414;
+}
+
+.nextButton:hover {
+  background-color:  rgb(21, 214, 54);
+}
+
 .nextButton {
   position: fixed;
   bottom: 10%;
-  right: 10px;
-  font-size: 20px;
+  right: 1%;
+  animation: changeBackgroundColor2 12s infinite;
 }
 
 .prevButton {
   position: fixed;
   bottom: 10%;
-  left: 10px;
-  font-size: 20px;
-}
-
-.slidePage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  width: 100vh;
-  height: 100vh;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+  left: 1%;
+  animation: changeBackgroundColor1 12s infinite;
 }
