@@ -39,7 +39,7 @@ body {
   /* font-family: 'Arial', sans-serif; */
   font-family: "Courier New", Courier, monospace;
   /* background-color: #f0f0f0; */
-  background-image: url("https://www.swiss-miss.com/wp-content/uploads/2018/02/46.gif");
+  background-image: url("./assets/spacetime.gif");
   background-size: 25% 25%; 
   background-repeat: repeat;
   margin: 0;
@@ -58,7 +58,8 @@ body {
   /* text-align: center; */
   display: flex;
   flex-direction: column;
-  width: 70%;
+  max-width: 70%;
+  min-width: 30%;
   max-height: 85%;
   margin: 25px;
   overflow: auto;
@@ -96,6 +97,7 @@ p {
   text-align: center;
   font-weight: 900;
   display: inline-block;
+  width: auto;
 }
 
 .ada-button {
@@ -107,7 +109,9 @@ p {
   margin: 10px;
   border-radius: 30px;
   padding: 15px 25px;
-  display: inline-block;
+  /* display: inline-block; */
+  align-self: center;
+  max-width: 50%;
 }
 
 .final-slide-text {
@@ -161,10 +165,10 @@ p {
   0% {
     background-color: transparent;
   }
-  85% {
+  50% {
     background-color: transparent;
   }
-  93% {
+  75% {
     background-color: #ca1414;
   }
   100% {
@@ -176,10 +180,10 @@ p {
   0% {
     background-color: transparent;
   }
-  85% {
+  50% {
     background-color: transparent;
   }
-  93% {
+  75% {
     background-color: rgb(21, 214, 54);
   }
   100% {
@@ -191,7 +195,7 @@ p {
   font-size: 32px;
   font-weight: 900;
   padding: 10px 20px;
-  background-color: transparent;
+  /* background-color: transparent; */
   color: #ffffff;
   margin: 10px;
   border-radius: 5px;
@@ -199,24 +203,31 @@ p {
   transition: background-color 0.3s;
 }
 
-.prevButton:hover {
-  background-color: #ca1414;
-}
-
-.nextButton:hover {
-  background-color:  rgb(21, 214, 54);
-}
-
 .nextButton {
   position: fixed;
   bottom: 10%;
   right: 1%;
-  animation: changeBackgroundColor2 12s infinite;
+  /* animation: changeBackgroundColor2 2s infinite; */
+  /* animation-play-state: running; */
 }
 
 .prevButton {
   position: fixed;
   bottom: 10%;
   left: 1%;
-  animation: changeBackgroundColor1 12s infinite;
+  /* animation: changeBackgroundColor1 2s infinite; */
+  /* animation-play-state: running; */
+}
+
+.prevButton:hover {
+  animation-play-state: paused;
+  background-color: #ca1414;
+  transition: background-color 0.3s;
+
+}
+
+.nextButton:hover {
+  animation-play-state: paused;
+  background-color:  rgb(21, 214, 54);
+  transition: background-color 0.3s;
 }
